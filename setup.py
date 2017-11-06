@@ -39,7 +39,7 @@ setup(
     name=NAME,
     version=VERSION,
     description="WebSocket client for python. hybi13 is supported.",
-    long_description=open("README.rst").read(),
+    long_description=open("README.md").read(),
     author="liris",
     author_email="liris.pp@gmail.com",
     license="LGPL",

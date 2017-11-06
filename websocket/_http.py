@@ -194,11 +194,8 @@ def _tunnel(sock, host, port, auth):
     debug("Connecting proxy...")
     connect_header = "CONNECT %s:%d HTTP/1.0\r\n" % (host, port)
     # TODO: support digest auth.
-    if auth and auth[0]:
-        auth_str = auth[0]
-        if auth[1]:
-            auth_str += ":" + auth[1]
-        encoded_str = base64encode(auth_str.encode()).strip().decode()
+    if auth:
+        encoded_str = base64encode(auth.encode()).strip().decode()
         connect_header += "Proxy-Authorization: Basic %s\r\n" % encoded_str
     connect_header += "\r\n"
     dump("request header", connect_header)
